@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="">
+	<meta name="theme-color" content="#000000">
+	<title>Fire-animation</title>
+</head>
+
+<body>
+	<div id="imageContent">
+		<img id="imgAnimate" src="">
+	</div>
+	<script type="text/javascript">
+		const imgUrl = 'img/1563572-';
+		let filename = '';
+		const imgEle = document.getElementById('imgAnimate');
+		SetImgAnimate(0);
+		function SetImgAnimate(num) {
+			if (num > 103) num = 0;
+			filename = imgUrl + num + '.png';
+			// console.log(filename);
+			imgEle.src = filename;
+			setTimeout(() => {
+				SetImgAnimate(num + 1);
+			}, 100);
+		}
+	</script>
+</body>
+
+</html>
